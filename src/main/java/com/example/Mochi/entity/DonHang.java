@@ -17,7 +17,7 @@ public class DonHang {
     private Date NgayDatHang;
 
     @ManyToOne
-    @JoinColumn(name = "userid")
+    @JoinColumn(name = "userid",nullable = true)
     private User user;
 
     @JsonIgnore

@@ -1,6 +1,7 @@
 package com.example.Mochi.controller;
 
 
+import com.example.Mochi.entity.CTDH;
 import com.example.Mochi.entity.DonHang;
 import com.example.Mochi.entity.User;
 import com.example.Mochi.repository.DonhangRepository;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @RestController
@@ -21,10 +23,26 @@ public class DonhangController {
     @Autowired
     private DonhangRepository repository;
 
-    @PostMapping()
-    public DonHang createDonhang(@RequestBody DonHang donHang){
-        return service.createDonhang(donHang);
-    }
+//    @PostMapping()
+//    public @ResponseBody
+//     DonHang createDonhang(@RequestBody CTDH ctdh){
+//        DonHang result = service.createDonhang(ctdh);
+//        boolean b = Objects.nonNull(result);
+//
+//        if(Boolean.TRUE.equals(b))
+//        {
+//            //call service to insert order detail
+//            // CREATEDETAI(list<int> produc result.getDOm)
+//            System.out.println("don hang:  " +  result.getDonhangId());
+//        }
+//
+//        //call service to insert order detail
+//          // CREATEDETAI(list<int> product
+//        //      , int donhangid)
+//
+//        return result;
+//
+//    }
     @GetMapping()
     public List<DonHang> getAll(){
         return service.getAllDonhang();

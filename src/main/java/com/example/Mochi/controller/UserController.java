@@ -23,7 +23,7 @@ public class UserController {
     public Optional<User> getUserById (@PathVariable("userid") int id){
         return service.getUserById(id);
     }
-    @PostMapping()
+    @PostMapping("")
     public String createUser(@RequestBody User user){
         return service.insertUser(user);
     }

@@ -38,10 +38,7 @@ public class UserService {
     public User updateUser(User updateUser){
         User baseUser = repository.findById(updateUser.getUserid()).orElse(null);
         baseUser.setEmail(updateUser.getEmail());
-//        baseUser.setName(updateUser.getName());
-//        baseUser.setAge(updateUser.getAge());
-//        baseUser.setPhone(updateUser.getPhone());
-//        baseUser.setAddress(updateUser.getAddress());
+        baseUser.setAddress(updateUser.getAddress());
 //        Date now = new Date();
 //        baseUser.setUpdate_at(now);
         return repository.save(baseUser);
